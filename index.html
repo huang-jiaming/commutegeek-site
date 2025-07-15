@@ -63,6 +63,14 @@
       font-size: 14px;
       color: #888;
     }
+    .logo-image {
+      height: auto;
+      width: 160px; /* Or adjust between 120px–200px based on your visual preference */
+      max-width: 80%;
+      margin: 10px 0;
+    }
+
+
     @media screen and (max-width: 600px) {
       nav {
         flex-direction: column;
@@ -81,16 +89,19 @@
   </style>
 </head>
 <body>
-  <header>
-    <div class="logo">CommuteGeek</div>
+  <header style="display: flex; flex-direction: column; align-items: center;">
+    <div class="logo-container">
+      <img src="/assets/logo.png" alt="CommuteGeek Logo" class="logo-image" />
+    </div>
     <nav>
       <a href="/">Home</a>
       <a href="/privacy/">Privacy Policy</a>
       <a href="/tos/">Terms of Service</a>
       <a href="/contact/">Contact</a>
     </nav>
-    
   </header>
+  
+  
 
   <section class="hero">
     <h1>Your intelligent commute alarm</h1>
