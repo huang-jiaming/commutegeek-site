@@ -11,7 +11,7 @@
       height: 100%;
       font-family: Arial, sans-serif;
       background-color: #f8f8f8;
-      overflow: hidden;
+      overflow: auto;
     }
     header {
       padding: 20px;
@@ -25,6 +25,8 @@
     }
     nav {
       margin-top: 10px;
+      display: flex;
+      flex-wrap: wrap;
     }
     nav a {
       margin: 0 15px;
@@ -70,6 +72,35 @@
       color: #888;
       background-color: #f0f0f0;
     }
+    @media screen and (max-width: 600px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+      }
+
+      .logo {
+        font-size: 24px;
+      }
+
+      .content {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        padding: 20px 10px;
+      }
+
+      video, .steps {
+        width: 100%;
+        max-width: 100%;
+      }
+
+      .steps {
+        max-height: none;
+        margin-top: 20px;
+      }
+    }
+
   </style>
 </head>
 <body>
