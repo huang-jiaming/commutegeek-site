@@ -94,14 +94,10 @@
       <a href="/contact/">Contact</a>
     </nav>
   </header>
-  
+
   <main>
     <h1>Contact Us</h1>
-    <form 
-      action="https://formspree.io/f/xnnzqavr" 
-      method="POST" 
-      data-redirect="https://commutegeek.com/thankyou/"
-    >
+    <form action="https://formspree.io/f/xnnzqavr" method="POST">
       <label for="name">Name</label>
       <input type="text" name="name" id="name" required />
 
@@ -118,5 +114,11 @@
   <footer>
     &copy; 2025 CommuteGeek Corp. All rights reserved.
   </footer>
+
+  <script>
+    if (window.location.hostname.includes("formspree.io")) {
+      window.location.href = "https://commutegeek.com/thankyou/";
+    }
+  </script>
 </body>
 </html>
