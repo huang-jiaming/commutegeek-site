@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CommuteGeek Demo</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: Arial, sans-serif;
+      background-color: #f8f8f8;
+      overflow: hidden;
+    }
+    header {
+      padding: 20px;
+      background-color: #ffffff;
+      border-bottom: 1px solid #e0e0e0;
+    }
+    .logo {
+      font-size: 32px;
+      font-weight: bold;
+      color: #2c3e50;
+    }
+    nav {
+      margin-top: 10px;
+    }
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #3498db;
+      font-weight: bold;
+    }
+    .content {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: center;
+      height: calc(100% - 160px);
+      padding: 20px;
+      box-sizing: border-box;
+      overflow: hidden;
+      gap: 40px;
+    }
+    video {
+      max-width: 45vw;
+      max-height: 80vh;
+    }
+    .steps {
+      width: 45vw;
+      max-height: 80vh;
+      overflow-y: auto;
+      text-align: left;
+    }
+    .step {
+      margin-bottom: 20px;
+    }
+    .step h3 {
+      color: #2c3e50;
+      margin-bottom: 5px;
+    }
+    .step p {
+      color: #555;
+      margin-top: 0;
+    }
+    footer {
+      padding: 20px;
+      font-size: 14px;
+      color: #888;
+      background-color: #f0f0f0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">CommuteGeek</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="tos.html">Terms of Service</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <div class="content">
+    <div class="steps">
+      <h1>Demo Walkthrough</h1>
+      <div class="step">
+        <h3>1. Set Your Destination</h3>
+        <p>Input your workplace or school address. CommuteGeek uses this to calculate travel time.</p>
+      </div>
+      <div class="step">
+        <h3>2. Choose Your Arrival Time</h3>
+        <p>Let us know when you need to be there — we’ll do the rest.</p>
+      </div>
+      <div class="step">
+        <h3>3. Set Your Prep Time</h3>
+        <p>Need 30 minutes to get ready? CommuteGeek factors that in to wake you up accordingly.</p>
+      </div>
+      <div class="step">
+        <h3>4. Smart Alarm Triggers</h3>
+        <p>We monitor real-time traffic and wake you up only when it's time to leave based on conditions.</p>
+      </div>
+    </div>
+
+    <video controls>
+      <source src="demo.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+  <footer>
+    &copy; 2025 CommuteGeek Corp. All rights reserved.
+  </footer>
+</body>
+</html>
