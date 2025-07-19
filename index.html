@@ -109,6 +109,46 @@
     <a href="/demo/" class="demo-button">View Demo</a>
   </section>
 
+  <input id="amount" placeholder="Amount in CAD" />
+  <button onclick="donate()">Donate</button>
+
+  <script src="https://js.stripe.com/v3/"></script>
+  <script>
+    const stripe = Stripe("pk_live_51RmdAgRtagfGkEPwgtJ2RGI5B1l1zhcnUXVmBG0ugTp8utfU7DkPeIN1aqsw2RayqEUhExrlEKoEQprulSdfTJp200r2Raiw9L");
+
+    async function donate() {
+      const amount = parseInt(document.getElementById("amount").value) * 100;
+
+      if (!amount || isNaN(amount) || amount <= 0) {
+        alert("Please enter a valid amount.");
+        return;
+      }
+
+      const response = await fetch(
+        "https://createcheckoutsession-yncmazr26q-uc.a.run.app",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            amount: amount,
+            success_url: window.location.href + "?success=true",
+            cancel_url: window.location.href + "?cancel=true",
+          }),
+        }
+      );
+
+      if (!response.ok) {
+        const error = await response.json();
+        alert("Checkout failed: " + error.error);
+        return;
+      }
+
+      const data = await response.json();
+      window.location.href = data.url;
+    }
+  </script>
+
+  
   <footer>
     &copy; 2025 CommuteGeek Corp. All rights reserved.
   </footer>
