@@ -41,11 +41,16 @@
       padding: 30px;
       border-radius: 8px;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-      text-align: left;
     }
-    h1, h2 {
+    h1 {
       text-align: center;
+    }
+    h2 {
       color: #2c3e50;
+      margin-top: 30px;
+    }
+    p {
+      line-height: 1.6;
     }
     footer {
       padding: 20px;
@@ -57,9 +62,24 @@
     }
     .logo-image {
       height: auto;
-      width: 160px;
+      width: 160px; /* Or adjust between 120px–200px based on your visual preference */
       max-width: 80%;
       margin: 10px 0;
+    }
+    @media screen and (max-width: 600px) {
+      nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+      }
+
+      main {
+        padding: 15px;
+      }
+
+      .logo {
+        font-size: 24px;
+      }
     }
   </style>
 </head>
@@ -75,6 +95,7 @@
       <a href="/contact/">Contact</a>
     </nav>
   </header>
+  
 
   <main>
     <h1>Terms of Service</h1>
