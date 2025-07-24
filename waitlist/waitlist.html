@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>CommuteGeek Beta Waitlist</title>
+  <style>
+    body { font-family: Arial; max-width: 600px; margin: 40px auto; padding: 20px; background: #f9f9f9; }
+    input, textarea { width: 100%; padding: 10px; margin: 10px 0; }
+    button { padding: 12px; background: #007aff; color: white; border: none; cursor: pointer; width: 100%; }
+    .hidden { display: none; }
+  </style>
+</head>
+<body>
+  <h1>Join CommuteGeek Beta</h1>
+  <form id="waitlist-form">
+    <input type="text" id="name" placeholder="Your name" required />
+    <input type="email" id="email" placeholder="Email address" required />
+    <textarea id="reason" placeholder="Why do you want to try CommuteGeek?" required></textarea>
+  
+    <input type="number" id="commuteTime" placeholder="Avg. commute time (minutes)" required />
+    <input type="number" id="commuteDistance" placeholder="Avg. commute distance (km or miles)" required />
+  
+    <label for="mode">Primary mode of transport:</label>
+    <select id="mode" required>
+      <option value="">Select one</option>
+      <option>Car</option>
+      <option>Public Transit</option>
+      <option>Bike</option>
+      <option>Walk</option>
+      <option>Other</option>
+    </select>
+  
+    <label for="recommend">Would you recommend CommuteGeek?</label>
+    <select id="recommend" required>
+      <option value="">Select one</option>
+      <option>Yes</option>
+      <option>No</option>
+      <option>Maybe</option>
+    </select>
+  
+    <input type="number" id="price" placeholder="How much would you pay per month? ($)" min="0" step="1" required />
+  
+    <button type="submit">Submit</button>
+  </form>
+  
+
+  <div id="success" class="hidden">
+    <p>Thanks! Here's your beta link:</p>
+    <p><a href="https://testflight.apple.com/join/5pau31pt" target="_blank">Join CommuteGeek Beta</a></p>
+  </div>
+
+  <div id="error" class="hidden" style="color:red;"></div>
+
+  <script>
+    const form = document.getElementById('waitlist-form');
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const reason = document.getElementById('reason').value;
+
+      try {
+        const res = await fetch('https://us-central1-commutegeek.cloudfunctions.net/waitlistIntake', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            name,
+            email,
+            reason,
+            commuteTime: document.getElementById('commuteTime').value,
+            commuteDistance: document.getElementById('commuteDistance').value,
+            mode: document.getElementById('mode').value,
+            recommend: document.getElementById('recommend').value,
+            price: document.getElementById('price').value
+          })
+        });
+
+
+        if (res.ok) {
+          document.getElementById('waitlist-form').classList.add('hidden');
+          document.getElementById('success').classList.remove('hidden');
+        } else {
+          const data = await res.json();
+          document.getElementById('error').textContent = data.error || 'Something went wrong.';
+          document.getElementById('error').classList.remove('hidden');
+        }
+      } catch (err) {
+        document.getElementById('error').textContent = 'Network error. Please try again.';
+        document.getElementById('error').classList.remove('hidden');
+      }
+    });
+  </script>
+</body>
+</html>
+
