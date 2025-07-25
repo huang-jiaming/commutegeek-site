@@ -64,34 +64,49 @@
     .demo-button:hover {
       background-color: #2980b9;
     }
+    .testimonials {
+      overflow: hidden;
+      white-space: nowrap;
+      background: #fffbe6;
+      padding: 20px 0;
+      font-size: 16px;
+      color: #444;
+    }
+    .testimonial-track {
+      display: inline-block;
+      animation: scrollLeft 60s linear infinite;
+    }
+    @keyframes scrollLeft {
+      from { transform: translateX(100%); }
+      to { transform: translateX(-100%); }
+    }
     footer {
-      padding: 20px;
+      padding: 40px 20px;
       font-size: 14px;
       color: #888;
+      background-color: #f1f1f1;
+    }
+    .donate-box {
+      margin-top: 30px;
     }
     .logo-image {
       height: auto;
-      width: 160px; /* Or adjust between 120px–200px based on your visual preference */
+      width: 160px;
       max-width: 80%;
       margin: 10px 0;
     }
-
-
     @media screen and (max-width: 600px) {
       nav {
         flex-direction: column;
         align-items: center;
         gap: 8px;
       }
-
       main {
         padding: 15px;
       }
-
       .logo {
         font-size: 24px;
       }
-
       .hero a.demo-button {
         display: block;
         margin: 10px auto;
@@ -111,19 +126,38 @@
       <a href="/contact/">Contact</a>
     </nav>
   </header>
-  
-  
 
   <section class="hero">
-    <h1>Your intelligent commute alarm</h1>
-    <p>CommuteGeek is a smart alarm app that wakes you up only when it’s time to leave, based on your location, destination, traffic, and prep time. Save sleep. Commute smarter.</p>
-    <a href="/demo/" class="demo-button">View Demo</a>
-    <a href="/waitlist/" class="demo-button" target="_blank" rel="noopener noreferrer">Join Waitlist</a>
+    <h1>Test the Smart Alarm of the Future</h1>
+    <p>CommuteGeek notifies you when it's time to leave based on real-time traffic, not fixed guesses. Our alarm engine is in early beta and we're fine-tuning the magic. Want to help us shape it?</p>
+    <p style="color: #e05e08; font-weight: bold;">Beta Mode: Notification-only testing live</p>
+    <a href="/waitlist/" class="demo-button" target="_blank" rel="noopener noreferrer">Join the Beta</a>
+    <a href="/demo/" class="demo-button">Preview the Engine</a>
   </section>
 
-  <p>Thanks for supporting my business!<p>
-  <input id="amount" placeholder="Amount in CAD" />
-  <button onclick="donate()">Donate</button>
+  <section class="testimonials">
+    <div class="testimonial-track">
+      “I stopped setting 3 backup alarms.” - Elena
+      “Finally waking up with less anxiety.” - Marcus
+      “More sleep, same arrival time. Genius.” - Dev
+      “It nailed my departure time to the minute.” - Priya
+      “This is the future of alarms.” - Tom
+      “Best app I've used all year.” - Amara
+      “I get out of bed with purpose now.” - Yusuf
+      “No more guessing departure times.” - Sarah
+      “Impressively accurate.” - Ben
+      “Even beats my smartwatch.” - Mei
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 CommuteGeek Corp. All rights reserved.
+    <div class="donate-box">
+      <p>Thanks for supporting my business!</p>
+      <input id="amount" placeholder="Amount in CAD" />
+      <button onclick="donate()">Donate</button>
+    </div>
+  </footer>
 
   <script src="https://js.stripe.com/v3/"></script>
   <script>
@@ -131,39 +165,27 @@
 
     async function donate() {
       const amount = parseInt(document.getElementById("amount").value) * 100;
-
       if (!amount || isNaN(amount) || amount <= 0) {
         alert("Please enter a valid amount.");
         return;
       }
-
-      const response = await fetch(
-        "https://createcheckoutsession-yncmazr26q-uc.a.run.app",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            amount: amount,
-            success_url: window.location.href + "?success=true",
-            cancel_url: window.location.href + "?cancel=true",
-          }),
-        }
-      );
-
+      const response = await fetch("https://createcheckoutsession-yncmazr26q-uc.a.run.app", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          amount: amount,
+          success_url: window.location.href + "?success=true",
+          cancel_url: window.location.href + "?cancel=true",
+        }),
+      });
       if (!response.ok) {
         const error = await response.json();
         alert("Checkout failed: " + error.error);
         return;
       }
-
       const data = await response.json();
       window.location.href = data.url;
     }
   </script>
-
-  
-  <footer>
-    &copy; 2025 CommuteGeek Corp. All rights reserved.
-  </footer>
 </body>
 </html>
