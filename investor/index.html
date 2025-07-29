@@ -1,191 +1,197 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CommuteGeek - Investor Deck Access</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f8f8f8;
-            min-height: 100vh;
-            padding: 20px;
-        }
-        
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 8px;
-            padding: 40px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            margin-top: 50px;
-            border-top: 4px solid #e05e08;
-        }
-        
-        .logo {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        
-        .logo img {
-            height: auto;
-            width: 120px;
-            margin-bottom: 10px;
-        }
-        
-        h1 {
-            font-size: 2.5rem;
-            color: #2c3e50;
-            margin-bottom: 10px;
-        }
-        
-        .tagline {
-            color: #666;
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-        }
-        
-        .highlight {
-            background: #fffbe6;
-            padding: 20px;
-            border-radius: 4px;
-            margin-bottom: 30px;
-            border-left: 4px solid #e05e08;
-        }
-        
-        .form-group {
-            margin-bottom: 20px;
-        }
-        
-        label {
-            display: block;
-            font-weight: 600;
-            margin-bottom: 8px;
-            color: #333;
-        }
-        
-        input, select, textarea {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #e0e0e0;
-            border-radius: 4px;
-            font-size: 16px;
-            transition: border-color 0.3s;
-        }
-        
-        input:focus, select:focus, textarea:focus {
-            outline: none;
-            border-color: #e05e08;
-        }
-        
-        textarea {
-            height: 80px;
-            resize: vertical;
-        }
-        
-        .submit-btn {
-            background-color: #e05e08;
-            color: white;
-            border: none;
-            padding: 14px 28px;
-            border-radius: 4px;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-            width: 100%;
-            transition: background-color 0.3s;
-        }
-        
-        .submit-btn:hover {
-            background-color: #2980b9;
-        }
-        
-        .privacy-note {
-            font-size: 14px;
-            color: #666;
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        .required {
-            color: #e05e08;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CommuteGeek - Investor Deck Access</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f8f8;
+      min-height: 100vh;
+      padding: 20px;
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 8px;
+      padding: 40px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      margin-top: 50px;
+      border-top: 4px solid #e05e08;
+    }
+    .logo {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .logo img {
+      height: auto;
+      width: 120px;
+      margin-bottom: 10px;
+    }
+    h1 {
+      font-size: 2.5rem;
+      color: #2c3e50;
+      margin-bottom: 10px;
+    }
+    .tagline {
+      color: #666;
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
+    .highlight {
+      background: #fffbe6;
+      padding: 20px;
+      border-radius: 4px;
+      margin-bottom: 30px;
+      border-left: 4px solid #e05e08;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #333;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #e0e0e0;
+      border-radius: 4px;
+      font-size: 16px;
+      transition: border-color 0.3s;
+    }
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: #e05e08;
+    }
+    textarea {
+      height: 80px;
+      resize: vertical;
+    }
+    .submit-btn {
+      background-color: #e05e08;
+      color: white;
+      border: none;
+      padding: 14px 28px;
+      border-radius: 4px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      width: 100%;
+      transition: background-color 0.3s;
+    }
+    .submit-btn:hover {
+      background-color: #2980b9;
+    }
+    .privacy-note {
+      font-size: 14px;
+      color: #666;
+      text-align: center;
+      margin-top: 20px;
+    }
+    .required {
+      color: #e05e08;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <div class="logo">
-            <img src="/assets/logo.jpg" alt="CommuteGeek Logo">
-            <h1>CommuteGeek</h1>
-            <p class="tagline">Investor Deck Access</p>
-        </div>
-        
-        <div class="highlight">
-            <p><strong>Thanks for your interest in CommuteGeek</strong> - the social smart alarm that's redefining morning routines.</p>
-            <p style="margin-top: 10px;">Before accessing our pitch deck, please help us understand your investment focus:</p>
-        </div>
-        
-        <form action="https://docs.google.com/forms/d/e/1FAIpQLSd-_91UImL-g5DrMn-8zAMD3Dgf-LM0chdefo3mtBpomi_1IA/formResponse" method="POST" target="_blank" onsubmit="handleSubmit()">
-            <div class="form-group">
-                <label for="name">Full Name <span class="required">*</span></label>
-                <input type="text" id="name" name="entry.NAME_FIELD_ID" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="email">Email Address <span class="required">*</span></label>
-                <input type="email" id="email" name="entry.EMAIL_FIELD_ID" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="firm">Investment Firm/Fund Name <span class="required">*</span></label>
-                <input type="text" id="firm" name="entry.FIRM_FIELD_ID" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="check-size">Typical Check Size Range <span class="required">*</span></label>
-                <select id="check-size" name="entry.CHECKSIZE_FIELD_ID" required>
-                    <option value="">Select range...</option>
-                    <option value="$5K-$25K">$5K-$25K</option>
-                    <option value="$25K-$50K">$25K-$50K</option>
-                    <option value="$50K-$100K">$50K-$100K</option>
-                    <option value="$100K-$250K">$100K-$250K</option>
-                    <option value="$250K+">$250K+</option>
-                </select>
-            </div>
-            
-            <div class="form-group">
-                <label for="portfolio">Portfolio Companies (2-3 examples)</label>
-                <input type="text" id="portfolio" name="entry.PORTFOLIO_FIELD_ID" placeholder="e.g., Duolingo, Headspace, Morning Brew">
-            </div>
-            
-            <div class="form-group">
-                <label for="interest">What attracted you to CommuteGeek? <span class="required">*</span></label>
-                <textarea id="interest" name="entry.INTEREST_FIELD_ID" required placeholder="Social accountability, market timing, technical execution, etc."></textarea>
-            </div>
-            
-            <div class="form-group">
-                <label for="linkedin">LinkedIn Profile URL</label>
-                <input type="url" id="linkedin" name="entry.LINKEDIN_FIELD_ID" placeholder="https://linkedin.com/in/yourprofile">
-            </div>
-            
-            <button type="submit" class="submit-btn">Access Pitch Deck</button>
-        </form>
-        
-        <p class="privacy-note">
-            Your information will only be used for investor communications. We respect your privacy.
-        </p>
+  <div class="container">
+    <div class="logo">
+      <img src="/assets/logo.jpg" alt="CommuteGeek Logo">
+      <h1>CommuteGeek</h1>
+      <p class="tagline">Investor Deck Access</p>
     </div>
+    
+    <div class="highlight">
+      <p><strong>Thanks for your interest in CommuteGeek</strong> — the social smart alarm that's redefining morning routines.</p>
+      <p style="margin-top: 10px;">Before accessing our pitch deck, please help us understand your investment focus:</p>
+    </div>
+    
+    <form id="pitch-deck-form">
+      <div class="form-group">
+        <label for="name">Full Name <span class="required">*</span></label>
+        <input type="text" id="name" name="name" required>
+      </div>
 
-    <script>
-        function handleSubmit() {
-            // Redirect to thank you page after form submission
-            setTimeout(function() {
-                window.location.href = '/thank-you.html';
-            }, 1000);
-        }
-    </script>
+      <div class="form-group">
+        <label for="email">Email Address <span class="required">*</span></label>
+        <input type="email" id="email" name="email" required>
+      </div>
+
+      <div class="form-group">
+        <label for="firm">Investment Firm/Fund Name <span class="required">*</span></label>
+        <input type="text" id="firm" name="firm" required>
+      </div>
+
+      <div class="form-group">
+        <label for="checkSize">Typical Check Size Range <span class="required">*</span></label>
+        <select id="checkSize" name="checkSize" required>
+          <option value="">Select range...</option>
+          <option value="$5K-$25K">$5K-$25K</option>
+          <option value="$25K-$50K">$25K-$50K</option>
+          <option value="$50K-$100K">$50K-$100K</option>
+          <option value="$100K-$250K">$100K-$250K</option>
+          <option value="$250K+">$250K+</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="portfolio">Portfolio Companies (2-3 examples)</label>
+        <input type="text" id="portfolio" name="portfolio" placeholder="e.g., Duolingo, Headspace, Morning Brew">
+      </div>
+
+      <div class="form-group">
+        <label for="interest">What attracted you to CommuteGeek? <span class="required">*</span></label>
+        <textarea id="interest" name="interest" required placeholder="Social accountability, market timing, technical execution, etc."></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="linkedin">LinkedIn Profile URL</label>
+        <input type="url" id="linkedin" name="linkedin" placeholder="https://linkedin.com/in/yourprofile">
+      </div>
+
+      <button type="submit" class="submit-btn">Access Pitch Deck</button>
+    </form>
+
+    <p class="privacy-note">
+      Your information will only be used for investor communications. We respect your privacy.
+    </p>
+  </div>
+
+  <script>
+    document.getElementById('pitch-deck-form').addEventListener('submit', async function(e) {
+      e.preventDefault();
+
+      const form = e.target;
+      const formData = new FormData(form);
+
+      const payload = {
+        name: formData.get("name"),
+        email: formData.get("email"),
+        firm: formData.get("firm"),
+        checkSize: formData.get("checkSize"),
+        portfolio: formData.get("portfolio"),
+        interest: formData.get("interest"),
+        linkedin: formData.get("linkedin")
+      };
+
+      try {
+        await fetch("https://<YOUR_CLOUD_FUNCTION_URL>", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload)
+        });
+        window.location.href = "/thankyou/";
+      } catch (err) {
+        alert("Something went wrong. Please try again later.");
+        console.error(err);
+      }
+    });
+  </script>
 </body>
 </html>
